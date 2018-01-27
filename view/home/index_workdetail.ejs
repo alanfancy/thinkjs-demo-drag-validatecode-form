@@ -1,0 +1,113 @@
+<% include ../layout/header %>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+<div class="topMenu">
+    <div class="pre btn_last " href="/w-4481-690-2896-make.html"><i class=" icon"></i></div>
+    <div class="tit">问答题<span>5/5</span></div>
+    <div class="next btn_next " href="/w-4481-690-0-make.html"><i class=" dn"></i></div>
+</div>
+<div id="main" class="main">
+    <div class="wraper">
+        <div class="work_detailBox">
+            <div class="title">
+                <img alt="293893.jpg" src="http://files.7tkt.cn/Uploads/Public/Admin/class_content/upfile_8da55472ca5d724300f9203c920e2bf3_ba0a7a02a47974062d35b25466c9c2a0.jpg" title="1480328961320563.jpg" style="max-width: 300px; height: auto; display: inline-block;">123            </div>
+            <div class="answerList">
+                            </div>
+                                <form role="form" class="form-horizonta" method="post" enctype="multipart/form-data" name="uploadform" id="uploadform" action="//v0.api.upyun.com/qitian-uploads">
+                        <div class="uploadTips"><p class="p1">请写明解题思路：</p><p class="p2"><a href="/wap/work/work-photo-help" class="c_23a">拍照上传使用说明</a></p></div>
+                        <div class="myChoice">
+                            <p class="warnTips">亲爱的同学们，为给您提供好的作业体验和保证老师批阅效率，在提交题目答案时需要注意使用规范：</p>
+                            <div class="warnTxt">
+                                <p>① 请保证题目答案图片清晰可见</p>
+                                <p>② 请保证上传的题目答案内容与当前题目一致，且没有其它题目内容</p>
+                                <p>③ 禁止上传与题目答案无关的图片</p>
+                            </div>
+                        </div>
+                        <div class="uploadOutBox dn">
+                            <p class="uploadTit"><i class="icon icon02_08"></i>我的答案：</p>
+                            <ul class="uploadUl_ver">
+                                                            </ul>
+                        </div>
+                        <div class="uploadbar">
+                            <div class="footerBtn">
+                                <div class="uploadBox uploadBtn active">
+                                    <input class="uploadFile" id="file" name="file" accept="image/*" multiple="" type="file">
+                                    <p class="btn btn_md_16 btn_active">上传答案</p>
+                                </div>
+                                <div class="uploadBox invalid dn">
+                                    <p class="btn btn_md_16 btn_invalid">上传答案（最多限4张）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input name="answer" id="answer" value="" type="hidden">
+                        <input name="policy" id="policy" value="eyJidWNrZXQiOiJxaXRpYW4tdXBsb2FkcyIsImV4cGlyYXRpb24iOjE0ODQzNjQ1MzAsInNhdmUta2V5IjoiXC9VcGxvYWRzXC9QdWJsaWNcL0Zyb250XC93b3JrX2Rvd25sb2FkXC9cLzQ0ODFcL3tmaWxlbWQ1fV97cmFuZG9tMzJ9ey5zdWZmaXh9In0=" type="hidden">
+                        <input name="signature" id="signature" value="eecc8cb811390169fd973685d8727c8c" type="hidden">
+                    </form>
+                            </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var old_imgs = [];
+                        
+        core.ulClick();
+        core.uploadImgView.init({obj:".uploadUl_ver",old_imgs:old_imgs});
+        var cbo = [];
+        var blank = [];
+        var student_id = '4481';
+        var ws_id = '690';
+        var answer_id = '2897';
+
+        
+        $('.ulClick li').click(function(){
+            $('#answer').val($(this).attr('val'));
+        });
+
+        $('.cboClick li').click(function(){
+            $(this).toggleClass("active");
+            if($(this).hasClass("active")){
+                cbo.push($(this).attr('val'));
+            }else{
+                cbo.splice(jQuery.inArray($(this).attr('val'),cbo),1);
+            }
+            $('#answer').val(cbo.join(','));
+        });
+
+        function cc(){
+                                    $('#answer').val(core.uploadImgView.arr.join('||||||||'));
+                        return $('#answer').val();
+        }
+        $('.btn_next').click(function(){
+            var dn = 'dn';
+            if(dn=='dn'){
+                return false;
+            }
+            var answer = cc();
+            var href = $(this).attr('href');
+            $.post("/ajax/ajax-save-student-work-answer",{student_id:student_id,ws_id:ws_id,answer_id:answer_id,answer:answer},function(result){
+                window.location.href=href;
+            },"json");
+        });
+        $('.btn_last').click(function(){
+            var dn = '';
+            if(dn=='dn'){
+                return false;
+            }
+            var answer = cc();
+            var href = $(this).attr('href');
+            $.post("/ajax/ajax-save-student-work-answer",{student_id:student_id,ws_id:ws_id,answer_id:answer_id,answer:answer},function(result){
+                window.location.href=href;
+            },"json");
+        });
+
+        $('.btn_submit_work').click(function(){
+            var answer = cc();
+            var href = $(this).attr('href');
+            $.post("/ajax/ajax-save-student-work-answer",{student_id:student_id,ws_id:ws_id,answer_id:answer_id,answer:answer},function(result){
+                window.location.href=href;
+            },"json");
+        });
+    });
+</script> <!--内容区end-->
+<% include ../layout/footer %>

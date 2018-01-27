@@ -1,0 +1,43 @@
+<% include ../layout/header %>
+<link rel="stylesheet" type="text/css" href="../static/css/form.css">
+	<div id="main" class="main">
+		<div class="tabs">
+			<div id="main" class="main p10">
+				<form id="loginForm">
+					<div class="formBox mt10">
+						<div class="inpbox ">
+							<p class="inp_icon"><i class="icon icon-shoujiapp f24"></i></p>
+							<p class="inp_txt"><input type="text" name="mobile" class="textInp" placeholder="手机号" maxlength="11"/></p>
+						</div>
+					</div>
+					
+					<div class="formBox mt10">
+						<div class="inpbox ">
+							<p class="inp_icon"><i class="icon icon-mima prt1 f26"></i></p>
+							<p class="inp_txt"><input type="password" name="password" class="textInp" placeholder="密码"/></p>
+						</div>
+					</div>
+					<div class="formBox validOutBox"></div>
+					<div class="formBox mt20">
+						<div class="btnbox">
+							<p class="inp_txt"><input type="button" class="btn_lg btn_23a bd_none w loginBtn" value="登录" /></p>
+						</div>
+					</div>
+					<div class="formBox mt10">
+						<div class="btnbox">
+							<p class="inp_txt tr"><a class="forgetBtn" href="javascript:void(null)">忘记密码？</a></p>
+						</div>
+					</div>
+				</form>
+			</div>	
+		</div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/js/form.js"></script>
+<script>
+    $(function(){
+        // core.init();
+    })
+</script>
+</body>
+</html>

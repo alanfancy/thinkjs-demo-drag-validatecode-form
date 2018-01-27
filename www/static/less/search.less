@@ -1,0 +1,262 @@
+@import "icon";
+@import "list";
+//搜索页
+.searchPanel{
+  padding:10px 0;
+  border-bottom:1px solid #eeeeee;
+  //标题模块
+  .titleBox{
+    display:flex;padding:0 10px;
+    >.tit_txt{
+      flex:1;
+      height:30px;line-height:30px;color:#666;font-weight:bold;
+    }
+    >.tit_icon{
+      height:30px;line-height:30px;text-align:center;
+      >i{
+        display:inline-block;margin-top:6px;
+        .page_icon;.page_icon01_03;margin-left:5px;
+      }
+      >span{
+        height:30px;line-height:30px;vertical-align:top;font-size:1.2rem;
+      }
+      &.tit_more{
+        >i{
+          .page_icon01_04;margin-top:8px;
+        }
+      }
+    }
+  }
+  .search_historyUl{
+    display: inline-block;
+    line-height: 26px;padding:5px;
+    >li{
+      vertical-align: top;text-align: center;padding: 0 10px;
+      background:#fefefe;display: inline-block;
+      margin: 5px;height: 26px;line-height: 26px;
+      background:#efefef;border-radius:15px;-moz-border-radius: 15px;-webkit-border-radius:15px;
+      color:#666;font-size:1.2rem;
+    }
+  }
+  .search_hotUl{
+    padding:5px;
+    >li{
+       display:inline-block;width:50%;margin:10px 0;
+      >.search_hotBox{
+        display:flex;padding:0 5px;height:16px;line-height: 16px;font-size:1.2rem;
+        >.p1{
+          font-family:"Arial";
+          background:#bbb;text-align:center;width:16px;
+          color:#fff;
+          border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;
+        }
+        >.p2{
+          flex:1;margin:0 5px;
+          overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;
+          white-space:nowrap;
+        }
+        >.p3{
+          >i{
+              .page_icon;margin-top:2px;
+          }
+        }
+      }
+      &.upper{
+        >.search_hotBox {
+          >.p3 {
+            >i{
+              .page_icon01_05;
+            }
+          }
+        }
+      }
+      &.down{
+        >.search_hotBox {
+          >.p3 {
+            >i{
+              .page_icon02_05;
+            }
+          }
+        }
+      }
+      &.first{
+        >.search_hotBox {
+          >.p1 {
+            background: #f00;
+          }
+        }
+      }
+      &.second{
+        >.search_hotBox {
+          >.p1 {
+            background: #ff8400;
+          }
+        }
+      }
+      &.third{
+        >.search_hotBox {
+          >.p1 {
+            background: #6e2;
+          }
+        }
+      }
+    }
+  }
+}
+// 搜索结果页
+//电影列表
+.panelUl {
+  padding: 0;
+  > li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ececec;
+    margin: 0;
+    > .panelBox {
+      position: relative;
+      display: flex;
+      padding: 0 10px;
+      > .panelImg {
+        width: 35%;
+        min-width: 105px;
+        > img {
+          width: 100%;
+        }
+
+      }
+      > .panelSort {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        z-index: 1;
+        color: #ff8400;
+        //background: #fff;
+        padding: 0 5px;
+        font-size: 1.4rem;
+        line-height: 24px;
+      }
+      > .panelInfo {
+        display: flex;
+        flex-direction: column;
+        flex: 1;overflow:hidden;
+        margin-left: 10px;
+        > .infoBox {
+          flex: 1;
+          > .panelTit {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 1.6rem;
+            line-height: 24px;
+            max-height:40px;
+          }
+          > .info {
+            font-size: 1.2rem;
+            color: #999;
+            overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;white-space:nowrap;
+            &.lastTime {
+                color: #ff8400;
+            }
+          }
+        }
+
+        > .playBox {
+          display: flex;
+          flex-direction: column;
+          > .source {
+            height: 20px;
+            line-height: 20px;
+            display: flex;
+            flex: 1;
+            align-items: flex-end;
+            color: #666;
+            font-size: 1.2rem;
+            > i {
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              background: #ddd;
+              margin-left: 5px;
+            }
+          }
+          > .playBtn {
+            display: flex;
+            flex: 1;
+            align-items: flex-end;
+            margin-top: 5px;
+            > p {
+              height: 20px;
+              line-height: 20px;
+              display: inline-block;
+              border-radius: 30px;
+              -webkit-border-radius: 30px;
+              -moz-border-radius: 30px;
+              vertical-align: middle;
+              border: 1px solid #ff8400;
+              text-align: center;
+              > i {
+                .page_icon;
+                .page_icon01_06;
+                vertical-align: middle;
+              }
+              > span {
+                height: 20px;
+                line-height: 20px;
+                display: inline-block;
+                margin-left: 5px;
+              }
+              &.p1 {
+                background: #ff8400;
+                color: #fff;
+                padding: 5px 10px;
+              }
+              &.p2 {
+                background: #fff;
+                color: #ff8400;
+                margin-left: 10px;
+                padding: 5px 7px;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+  &.filmResultUl {
+
+  }
+  &.videoResultUl {
+    padding:0;
+    > li {
+      border-bottom: none;
+      > .panelBox {
+        > .panelImg {
+          width: 120px;height: 74px;overflow:hidden;
+          > img {
+            width:120px;;height: 74px;
+          }
+        }
+        > .panelInfo {
+          height: 74px;
+          > .infoBox {
+            > .panelTit {
+              white-space:normal;font-size: 1.4rem;line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//文字列表
+.wordsUl{
+  >li{
+    margin:10px;
+    >p{
+      background:#ededed;padding:10px;
+      overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;white-space:nowrap;
+      border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{% include "./layout/header.html" %}
+    <link rel="stylesheet" type="text/css" href="../static/css/duudle.css">
+    <link rel="stylesheet" type="text/css" href="../static/js/duudle/colpick/css/colpick.css">
+    <script type="text/javascript" src="../static/js/duudle/colpick/js/colpick.js"></script>
+    
+    <div id="main" class="main">
+        <div class="canvasBox">
+            <ul class="toolsUl">
+                <!-- <li>
+                    <a href="javascript:void(null)" class="smenu pre"><i class='icon icon_02_01'></i></a>
+                </li> -->
+                <li>
+                    <a href="javascript:void(null)" class="penType active" stage='pen'><i class='icon icon_01_01'></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(null)" class="penType" stage='Eraser'><i class='icon icon_01_02'></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(null)" id="penSize" class="penSize"><i num='1' class='tools_arg a1'></i></a>
+                    <div class="tools_fly" >
+                        <a href="javascript:void(null)" class="colorPenel ps"><i num='1' class='tools_arg a1'></i></a>
+                        <a href="javascript:void(null)" class="colorPenel ps"><i num='3' class='tools_arg a2'></i></a>
+                        <a href="javascript:void(null)" class="colorPenel ps"><i num='5' class='tools_arg a3'></i></a>
+                        <a href="javascript:void(null)" class="colorPenel ps"><i num='10' class='tools_arg a4'></i></a>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(null)" id="picker" class="colorPenel"><i class='icon icon_01_06'></i></a>
+                </li>
+                <li class="ml10">
+                    <a href="javascript:void(null)" class="smenu saveImg"><i class='icon icon_02_05'></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(null)" class="smenu clearCanvas"><i class='icon icon_02_02'></i></a>
+                </li>
+            </ul>
+            <canvas id='paintCanvas'></canvas>
+        </div>
+        <div class="msgOutBox">
+            <div class="wraper">
+                <div class="totalTips dn"></div>
+                <div class="work_detailBox">
+                    <!-- <div class="systemTxt msgBox ">
+                        <div class="msginbox">
+                            <div class="msgpanel">
+                                <div class="msgtxt">
+                                    <div class="msg"><span>系统通知：</span>XXX加入了聊天室，总人数XXX人</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="myTxt msgBox ">
+                        <div class="msginbox">
+                            <div class="msgpanel">
+                                <div class="face">
+                                    <img src="../static/images/face/bq.png" width='20' height='20' />
+                                </div>
+                                <div class="msgtxt">
+                                    <div class="name">我</div>
+                                    <div class="msg">您好呀</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="myTxt msgBox ">
+                        <div class="msginbox">
+                            <div class="msgpanel">
+                                <div class="face">
+                                    <img src="../static/images/face/bq.png" />
+                                </div>
+                                <div class="msgtxt">
+                                    <div class="name">我</div>
+                                    <div class="msg"><img src="../static/images/cache/img.jpg" >sdfsdfsdf<img src="../static/images/face/bq.png" ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="cusTxt msgBox ">
+                        <div class="msginbox">
+                            <div class="msgpanel">
+                                <div class="face">
+                                    <img src="../static/images/face/zl.png" />
+                                </div>
+                                <div class="msgtxt">
+                                    <div class="name">志玲</div>
+                                    <div class="msg"><img src="../static/images/cache/img.jpg" ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cusTxt msgBox ">
+                        <div class="msginbox">
+                            <div class="msgpanel">
+                                <div class="face">
+                                    <img src="../static/images/face/zl.png" width='20' height='20' />
+                                </div>
+                                <div class="msgtxt">
+                                    <div class="name">志玲</div>
+                                    <div class="msg">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerOutBox ">
+        <div class="footerbar">
+            <div class="footerBtn tc">
+                    <div class="dis_textBox">
+                        <i class="voice_show"></i>
+                        <div class="dis_textarea">
+                            <input name="msgText" id="msgText" class="msgText" placeholder='请输入' />
+                            <input name="voice_btn" id="voice_btn" type="button" class="voice_btn dn" readonly value="按住说话" />
+                        </div>
+                        <div class="dis_faceBox"><a class="emotion face_btn" href="javascript:void(null)"><i class='icon icon_01_05'></i></a></div>
+                        <div class="dis_control">
+                            <div class="sub_btnBox active ">
+                                <input class="sub_btn btn btn_submit bn" id="sub_btn" type="button" value="发送">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dis_face" class="dn"></div>
+            </div>
+        </div>
+    </div>
+
+<!--内容区end-->
+</div>
+</body>
+<script src="../static/js/core.js"></script>
+<script src="../static/js/duudle/canvas2image.js"></script>
+<script src="../static/js/duudle/socket.io-1.4.5.js"></script>
+<script src="../static/js/duudle/jquery.qqFace.js"></script>
+<script src="../static/js/duudle/recorder.js"></script>
+<script src="../static/js/duudle/socketEvent.js"></script>
+<script src="../static/js/duudle/msg.js"></script>
+<script type="text/javascript">
+$(function(){
+    let canvasObj=document.getElementById('paintCanvas');
+    /*$('.pre').click(function(){
+        core.ctx.restore();
+    })*/
+    $('.saveImg').click(function(){
+        var imgSrc = canvasObj.toDataURL("image/png").replace("image/png", "image/octet-stream");   
+        // window.location.href=image;
+
+        /*var image    = canvasObj.toDataURL("image/png");  
+        var w=window.open('about:blank','image from canvas');  
+        w.document.write("<img src='"+image+"' alt='from canvas'/>");*/
+        // var img=Canvas2Image.convertToImage(canvasObj, $('#paintCanvas').width(), $('#paintCanvas').height(), 'png');
+        // var url=Canvas2Image.saveAsImage(canvasObj, $('#paintCanvas').width(), $('#paintCanvas').height(), 'png');
+        // core.socket.emit('uploadimg',{src:imgSrc,username:core.username});
+        $.post('/home/duudle/uploadimg',{src:imgSrc,username:core.username})
+    });
+    $('.clearCanvas').click(function(){
+        // core.ctx.clearRect(0, 0, 320, 346);
+        canvasObj.width = canvasObj.width;
+    })
+    $('.penType').click(function(){
+        $('.penType').removeClass('active');
+        $(this).addClass('active');
+        if($(this).attr('stage')==='pen'){
+            core.isPen=true;
+        }else{
+            core.isPen=false;
+        };
+    });
+    $('.penSize').click(function(){
+        $('.tools_fly').slideToggle();
+        $('.colorPenel.ps').click(function(){
+            var html=$(this).html();
+            $('.penSize').html(html);
+            $('.tools_fly').slideUp();
+            core.penData.lineWidth=$(this).children('i').attr('num');
+        })
+    });
+    $('.colorPenel').css('background','#3289c7');
+    core.penData.lineWidth=$('.penSize i').attr('num');
+    core.penData.strokeStyle='#3289c7';
+
+    $('#picker').colpick({
+        layout:'rgbhex',
+        submit:0,
+        color: '3289c7',
+        colorScheme:'dark',
+        onChange:function(hsb,hex,rgb,el,bySetColor) {
+            $(el).css('background','#'+hex);
+            console.log(hex);
+            core.penData.strokeStyle='#'+hex;
+            // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+            if(!bySetColor) $(el).val(hex);
+        }
+    }).keyup(function(){
+        $(this).colpickSetColor(this.value);
+    });
+
+
+    core.ctx=canvasObj.getContext('2d');
+    core.ctx.lineCap = 'round';
+    core.ctx.lineJoin ='round';
+    core.ctx.lineWidth = '1';
+    core.ctx.strokeStyle = core.penData.strokeStyle;
+
+canvasObj.addEventListener("touchstart",core.paint.touchStartHandler,false);
+canvasObj.addEventListener("touchmove",core.paint.touchMoveHandler,false);
+canvasObj.addEventListener("touchend",core.paint.touchEndHandler,false);
+
+})
+</script>
+</html>

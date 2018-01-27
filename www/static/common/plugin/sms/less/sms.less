@@ -1,0 +1,35 @@
+.sms_height(@h:30px){
+  height:@h;line-height:@h;
+}
+.wyl_smsBox{
+  .wyl_wraper{
+    .smsSend{
+      display:flex;
+      >.p1{
+        flex:1;display:flex;padding:0 10px;border:1px solid #ddd;
+        .sms_height;
+        >input{
+          width:100%;flex:1;display:flex;border:none;.sms_height;
+        }
+      }
+      >.p2{
+        margin-left:10px;
+        >.smsBtn{
+          display:inline-block;background:#27c543;padding:0 10px;color:#fff;
+          .sms_height(@h:32px);
+        }
+      }
+    }
+    .wyl_row{
+      .smsTxt{
+        .sms_height;
+        >span{
+          color:#27c543;
+        }
+      }
+      .smsTips{
+        color:#666;.sms_height;
+      }
+    }
+  }
+}

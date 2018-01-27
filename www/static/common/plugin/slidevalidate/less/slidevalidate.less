@@ -1,0 +1,69 @@
+canvas{background:none;}
+.wyl_validateBox {
+  height:100%;overflow:hidden;overflow-y:auto;position: relative;
+  display:flex;flex:1;flex-direction:column;
+  *{-moz-user-select: none; -khtml-user-select: none; user-select: none;}
+  >.refresh{
+    width:30px;height:30px;background: url("../images/refresh.png") no-repeat center center;display:inline-block;background-color:rgba(0,0,0,0.3);
+    position: absolute;top: 0;right: 0;z-index:1;
+    cursor:pointer;
+  }
+  >.wyl_canvasBox {
+    width: 100%;height:160px;display: block;position: relative;flex:1;overflow:hidden;
+    z-index:0;
+      .wyl_canvas {
+        display: block;background:none;flex: 1;
+        position: relative;z-index: 0;height:100%;
+      }
+      .wyl_validatebg {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;text-align: center;
+        >img{
+          display:block;
+        }
+        &.imgBg {
+          z-index: 1;
+          height:100%;
+          width: 100%;
+        }
+        &.imgValid {
+          z-index: 2;
+          height: 160px;
+          width: 60px;
+          filter: drop-shadow(1px 1px 1px black);
+        }
+      }
+  }
+  >.wyl_barBox{
+    height:40px;margin-top:10px;
+    position:relative;
+    border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;
+    >.wp1{
+      width:60px;height:40px;position:absolute;top:0;left:0;z-index:2;
+      background:#999;cursor:pointer;
+      border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;
+      &.action{
+        background:#ff8400;
+      }
+      &.slideBarBg{
+        height:38px;line-height:38px;display:none;
+        width:0;z-index:1;border:1px solid #1991fa;background:#d1e9fe;
+        border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;
+      }
+    }
+    >.wp2{
+      position:relative;z-index:0;height:38px;line-height:38px;text-align:center;
+      color:#aaa;border:1px solid #f0f0f0;background:#f7f9fa;
+      border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;
+      &.error{
+        color:#f00;border:1px solid #f00;
+      }
+      &.success{
+        color:#23ac38;border:1px solid #23ac38;
+      }
+    }
+  }
+}

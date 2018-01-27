@@ -1,0 +1,123 @@
+<% include ../layout/header %>
+    <!--内容区-->
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <div id="main" class="main">
+            <div class="wraper">
+                <div class="panel_listBox">
+                    <div class="panel_listBox_left bg_ff7a97" onclick="window.location.href='/w-4481-2-1-list.html'">
+                        <div>
+                            <p class="p1"><i class="icon icon01_01"></i></p>
+                            <p class="p2">英语</p>
+                        </div>
+                    </div>
+                    <div class="panel_listBox_right">
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-2-1-list.html'">
+                                <p class="p1">待提交：<span>4</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-2-2-list.html'">
+                                <p class="p2">待批阅：<span>1</span></p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-2-3-list.html'">
+                                <p class="p3">待更正：<span>1</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-2-4-list.html'">
+                                <p class="p4">已批阅：<span>0</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel_listBox">
+                    <div class="panel_listBox_left bg_5fc7fc" onclick="window.location.href='/w-4481-1-1-list.html'">
+                        <div>
+                            <p class="p1"><i class="icon icon01_02"></i></p>
+                            <p class="p2">语文</p>
+                        </div>
+                    </div>
+                    <div class="panel_listBox_right">
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-1-1-list.html'">
+                                <p class="p1">待提交：<span>28</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-1-2-list.html'">
+                                <p class="p2">待批阅：<span>0</span></p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-1-3-list.html'">
+                                <p class="p3">待更正：<span>1</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-1-4-list.html'">
+                                <p class="p4">已批阅：<span>4<i class="tips"></i></span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel_listBox">
+                    <div class="panel_listBox_left bg_ffb901" onclick="window.location.href='/w-4481-3-1-list.html'">
+                        <div>
+                            <p class="p1"><i class="icon icon01_03"></i></p>
+                            <p class="p2">数学</p>
+                        </div>
+                    </div>
+                    <div class="panel_listBox_right">
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-3-1-list.html'">
+                                <p class="p1">待提交：<span>11</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-3-2-list.html'">
+                                <p class="p2">待批阅：<span>1</span></p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-3-3-list.html'">
+                                <p class="p3">待更正：<span>6</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-3-4-list.html'">
+                                <p class="p4">已批阅：<span>16<i class="tips"></i></span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel_listBox">
+                    <div class="panel_listBox_left bg_ffb901" onclick="window.location.href='/w-4481-3-1-list.html'">
+                        <div>
+                            <p class="p1"><i class="icon icon01_03"></i></p>
+                            <p class="p2">晨读</p>
+                        </div>
+                    </div>
+                    <div class="panel_listBox_right">
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-3-1-list.html'">
+                                <p class="p1">待提交：<span>11</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-3-2-list.html'">
+                                <p class="p2">待批阅：<span>1</span></p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li onclick="window.location.href='/w-4481-3-3-list.html'">
+                                <p class="p3">待更正：<span>6</span></p>
+                            </li>
+                            <li onclick="window.location.href='/w-4481-3-4-list.html'">
+                                <p class="p4">已批阅：<span>16<i class="tips"></i></span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div> <!--内容区end-->
+    <script type="text/javascript">
+    $(function(){
+        $.ajax({
+            type:"GET",
+            url:"//test.front.7tkt.net/wap/work/index?student_id=895",
+            success:function(res){
+                console.log(res);
+            }
+        })
+    })
+    </script>
+<% include ../layout/footer %>

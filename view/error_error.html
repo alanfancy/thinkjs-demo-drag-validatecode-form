@@ -1,0 +1,30 @@
+{% include "./admin/admin_header.html" %}
+<link rel="stylesheet" type="text/css" href="../static/css/error.css">
+<script src="../static/js/error.js" type="text/javascript"></script>
+<div id="main" class="main">
+    <div class="wraper">
+        {% if errcode==101 %}
+            <!--用户未登陆-->
+            <div class="error101Box">
+                <div class="errmsg">错误提示：{{errmsg}}</div>
+                <p class="errTips"></p>
+                <a class="errBtn" href="javascript:void(null)">立即跳转</a>
+            </div>
+            <script type="text/javascript">
+                error101Time(5);
+            </script>
+        {% elseif errcode==102 %}
+            <!--用户未登陆-->
+            <div class="error101Box">
+                <div class="errmsg">错误提示：{{errmsg}}</div>
+                <p class="errTips"></p>
+                <a class="errBtn" href="javascript:void(null)">立即跳转</a>
+            </div>
+            <script type="text/javascript">
+                error101Time(5);
+            </script>
+        {% endif %}
+    </div>
+</div>
+
+{% include "./admin/admin_footer.html" %}

@@ -1,0 +1,96 @@
+{% include "./admin/admin_header.html" %}
+<link rel="stylesheet" type="text/css" href="../static/admin/css/admin_index.css">
+<!--
+//浏览器先尝试解析域名再将其进行缓存.DNS Prefetching特性允许开发者手动控制，告诉浏览器需要解析哪个域名。
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+-->
+
+<!--
+直接进行下载。这一操作不必依赖服务器端代码便能够执行
+<a href="download_pdf.php?id=15" download="myfile.pdf">Download PDF</a>
+-->
+<!--<script type="text/javascript">
+core.addLink('http://192.168.0.78:8360/manage/state=add','prerender');
+</script>-->
+<div id="main" class="main">
+    <div class="wraper">
+        <div class="adminMenuBox">
+            <ul class="admin_menuUl commonUl">
+                <li><p>广告</p></li>
+                <li class="active"><p>视频</p></li>
+                <li><p>游戏</p></li>
+                <li><p>淘客</p></li>
+                <li><p>用户</p></li>
+            </ul>
+        </div>
+        <div class="adminConBox">
+            <ul class="admin_conUl">
+                <li>
+                    <div class="admin_tit"><p>首页管理</p></div>
+                    <div class="admin_tableBox">
+                        sxx
+                    </div>
+                </li>
+                <li class="active">
+                    <div class="admin_tit">
+                        <select>
+                            <option>ID</option>
+                            <option>电影</option>
+                            <option>短视频</option>
+                        </select>
+                        <div class="admin_serach">{% include "./templates/temp_searchBar.html" %}</div>
+                        <p class="admin_add" uid="add"><i></i></p>
+                    </div>
+                    <div class="admin_tableBox">
+                        <table>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>评分</th>
+                                <th>权限</th>
+                                <th>编辑</th>
+                            </tr>
+                            {% for page in pagedata.data %}
+                                <tr mid="{{page.id}}">
+                                <td>{{loop.index}}</td>
+                                <td>{{page.name_cn}}</td>
+                                <td>{{page.score}}</td>
+                                <td>{{page.author}}</td>
+                                <td><p class="detailBtn">详情</p><p class="editBtn">编辑</p><p class="deleteBtn">删除</p></td>
+                            </tr>
+                            {% else %}
+
+                            {% endfor %}
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="admin_tit"><p>短视频管理</p></div>
+                    <div class="admin_tableBox">
+                        sxx
+                    </div>
+                </li>
+                <li>
+                    <div class="admin_tit"><p>游戏管理</p></div>
+                    <div class="admin_tableBox">
+                        sxx
+                    </div>
+                </li>
+                <li>
+                    <div class="admin_tit"><p>淘客管理</p></div>
+                    <div class="admin_tableBox">
+                        sxx
+                    </div>
+                </li>
+                <li>
+                    <div class="admin_tit"><p>用户设置</p></div>
+                    <div class="admin_tableBox">
+                        sxx
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../static/admin/js/admin_index.min.js"></script>
+{% include "./admin/admin_footer.html" %}

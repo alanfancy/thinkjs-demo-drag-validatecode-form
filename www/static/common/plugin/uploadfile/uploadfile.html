@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>上传控件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,Chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- uc强制竖屏 -->
+    <!-- <meta name="x5-orientation" content="portrait"> -->
+    <!-- QQ强制竖屏 -->
+    <!-- <meta name="screen-orientation" content="portrait"> -->
+    <!-- windows phone 点击无高光 -->
+    <!-- <meta name="msapplication-tap-highlight" content="no"> -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="outBox">
+    <script type="text/javascript" src="uploadfile.js"></script>
+<div id="main" class="main">
+    <div class="wraper">
+        <div class="adminConBox">
+            <div class="admin_editBox">
+                <div class="myUpload" title="海报一" accept="image"></div>
+                <div class="myUpload" title="海报二" accept="image"></div>
+                <div class="myUpload" title="海报三" accept="image"></div>
+                <div class="myUpload" title="视频资源" accept="video"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('.myUpload').uploadFile();
+    })
+</script>
+</body>
+</html>

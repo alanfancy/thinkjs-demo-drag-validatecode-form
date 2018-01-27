@@ -1,0 +1,72 @@
+//列表
+.panelUl{
+  padding:5px 2px;margin:0;display:-webkit-flex;display:flex;
+  //子元素换行
+  -webkit-flex-wrap:wrap;
+  -webkit-box-lines:multiple;
+  -moz-flex-wrap:wrap;
+  flex-wrap:wrap;
+  >li{
+    padding:0;margin:5px 0;
+    display: inline-block;
+    >.panelBox{
+      padding:0 2px;
+      >.panelImg{
+        position:relative;
+        >img{width:100%;border:none;position:relative;z-index: 0;}
+        >.totalTime{
+          position:absolute;bottom:5px;right:8px;z-index:1;font-size:1.2rem;color:#fff;
+        }
+        >.tips{
+          position:absolute;top:0;right:5px;z-index:1;font-size:1.2rem;
+          padding:0 5px;
+          border-bottom-right-radius:5px;border-bottom-left-radius:5px;
+          &.vip{background:#23ac38;color:#fff;}
+          &.pay{background:#ff4400;color:#fff;}
+          &.p1080{background:#2399ff;color:#fff;}
+          &.p720{background:#2266dd;color:#fff;}
+        }
+      }
+      >.panelTit{
+        padding:5px;
+        overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;
+      }
+    }
+  }
+  &.autoColumn{
+    >li{
+      flex-grow:1;//属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+      width:50%;
+    }
+  }
+  &.threeColumn{
+    >li{
+      width:33.3%;
+    }
+  }
+  &.twoColumn{
+    >li{
+      width:50%;
+    }
+  }
+  &.oneColumn{
+    >li{
+      flex-grow:1;
+      width:100%;
+    }
+  }
+
+  &.filmUl{
+    >li{
+      >.panelBox{
+        position:relative;
+        >.panelImg{
+          >img{}
+        }
+        >.panelSort{
+          position:absolute;top:0;right:5px;z-index: 1;color:#fff;background:rgba(255,0,0,.5);padding:0 5px;font-size:1.2rem;
+        }
+      }
+    }
+  }
+}

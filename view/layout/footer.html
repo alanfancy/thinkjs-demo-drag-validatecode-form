@@ -1,0 +1,16 @@
+
+            <div class="footerOutBox ">
+                    <ul class="footerbarUl ">
+                        {% for footer in footers %}
+                            <li class="foot_iconBox {{'fb'+loop.index}} {{'active' if footer.active else '' }}" thisurl="{{ footer.url }}" >
+                                <p class="foot_icon"><i class="layout_icon">&nbsp;</i></p>
+                                <p class="foot_icon_txt ">{{footer.name}}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+            </div>
+    </div>
+            <script type="text/javascript" src="../static/js/common.min.js"></script>
+</body>
+</html>

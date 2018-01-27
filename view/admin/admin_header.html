@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,Chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- uc强制竖屏 -->
+    <!-- <meta name="x5-orientation" content="portrait"> -->
+    <!-- QQ强制竖屏 -->
+    <!-- <meta name="screen-orientation" content="portrait"> -->
+    <!-- windows phone 点击无高光 -->
+    <!-- <meta name="msapplication-tap-highlight" content="no"> -->
+    <script type="text/javascript" src="../static/common/js/jquery/3.1.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="../static/js/core.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css">
+    <script type="text/javascript">
+        $(function(){
+            window.addEventListener("offline", function(e) {
+                alert('当前网络异常，请检查网络')
+            });
+            window.addEventListener("online", function(e) {});
+        });
+    </script>
+</head>
+<body>
+<div class="outBox">
+    <div class="header bg_white">
+                <div class="header_btn left pre_btn">
+                    {% if _URL=='/admin' %}
+                        <p>进入网站</p>
+                    {% else %}
+                        <p class="preIcon"><i></i></p>
+                    {% endif %}
+                </div>
+                <div class="header_tit">
+                    <p>{{title}}</p>
+                </div>
+                <div class="header_btn right">
+                    {% if _URL=='/' or _URL=='' %}
+                        <p>登陆</p>
+                    {% else %}
+                        <!--0 登陆 1注册-->
+                        <p class="top_loginBtn" link="{{rightbtn.link}}">{{rightbtn.txt}}</p>
+                    {% endif %}
+                </div>
+    </div>

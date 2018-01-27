@@ -1,0 +1,186 @@
+@import 'base';
+@import "icon";
+
+.smenu{background:#ccc;display:inline-block;width:30px;height:30px;line-height:30px;}
+
+.outBox{
+    .main{
+        //.ub;.ub_ver;
+        display:flex;
+        flex-direction: column;
+        .msgOutBox{
+            height:30%;
+            //.ub;.ub_ver;.ub_f1;
+            display:flex;flex:1;
+            flex-direction: column;
+            .wraper{
+                flex:1;
+                //.ub_f1;
+                overflow-x: hidden;overflow-y: auto;
+                .totalTips{
+                    position:fixed;top:50px;left:0;width:100%;background:#ddd;
+                    opacity:.8;z-index: 1;
+                    >p{
+                        text-align: center;color:#666;padding:5px 10px;
+                    }
+                }
+                .work_detailBox{
+                    padding-bottom:0;z-index:0;
+                    .msgBox{
+                        margin: 10px 0;
+                        display: inline-block;
+                        width:100%;
+                        &.myTxt{
+                            text-align:right;
+                            .msginbox{
+                                .msgpanel{
+                                    //.ub_rev;
+                                    flex-direction: row-reverse;
+                                    .face{}
+                                    .msgtxt{
+                                        margin-right:5px;
+                                        .msg{
+                                            background:#ff0;
+                                            color:#f00;
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                        &.cusTxt{
+                            text-align:left;
+                            .msginbox{
+                                .msgpanel{
+                                    .face{}
+                                    .msgtxt{
+                                        margin-left:5px;
+                                        .msg{
+                                            background:#fff;
+                                            color:#333;
+                                        }
+                                    }
+                                }
+                            } 
+                        }
+                        &.systemTxt{
+                            text-align:center; 
+                            font-size:1.2rem;
+                            .msginbox{
+                                max-width:90%;
+                                .msgpanel{
+                                    .face{}
+                                    .msgtxt{
+                                        .msg{
+                                            background:#ccc;
+                                            color:#fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .msginbox{
+                            max-width:80%;
+                            display:inline-block;
+                            .msgpanel{
+                                //.ub;
+                                display:flex;
+                                .face {
+                                        width:20px;
+                                        height:20px;
+                                        overflow:hidden;
+                                    img{
+                                        border-radius:5px;
+                                    }
+                                }
+                                .msgtxt{
+                                    //.ub_f1;
+                                    flex:1;
+                                    .name{
+                                        color:#999;
+                                    }
+                                    .msg{
+                                        background:#999;
+                                        color:#fff;
+                                        padding:5px 10px;
+                                        border-radius:5px;
+                                        margin-top:5px;
+                                        text-align: left;
+                                        >img{
+                                            max-width: 100%;
+                                            height: auto;
+                                            vertical-align: middle;
+                                            display:inline-block;
+                                            border:none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .canvasBox{
+            width:100%;height:70%;overflow:hidden;position:relative;z-index:1;
+            //.ub_f1;.ub;.ub_ver;
+            display:flex;
+            flex-direction: column;
+            flex:1;
+            > canvas{
+                background:#fff;display:block;//.ub_f1;
+                flex:1;
+            }
+            .toolsUl{
+                text-align:center;position:relative;z-index:1;
+                >li{
+                    display:inline-block;position:relative;vertical-align: top;height:30px;width:30px;
+                    .colorFly{
+                        position: absolute;top:0;left:0;z-index:1;height:30px;
+                    }
+                    >.tools_fly{
+                        position: absolute;top:30px;left:0;width:100%;display: none;
+                        .tools_arg{
+                            border-top:1px solid #999;
+                        }
+                    }
+                    .colorPenel, .penType, .penSize{
+                        display:inline-block;width:30px;height:30px;line-height:30px;background:#666;color:#fff;
+                        //border-radius:20px;    
+                        &.active{
+                            background:#23a000;
+                        }
+                    }
+                    .tools_arg{
+                            display:inline-block;width:100%;color:#fff;
+                            vertical-align:middle;
+                            background:#fff;overflow:hidden;
+                            &.a1{
+                                border-top:none;
+                                width:1px;height:1px;
+                            }
+                            &.a2{
+                                width:3px;height:3px;
+                            }
+                            &.a3{
+                                width:5px;height:5px;
+                            }
+                            &.a4{
+                                width:10px;height:10px;
+                            }
+                            &.c1{
+                                border-top:none;
+                                background:#f00;vertical-align:top;
+                            }
+                            &.c2{
+                                background:#ff0;vertical-align:top;
+                            }
+                            &.c3{
+                                background:#00f;vertical-align:top;
+                            }
+                        }
+                }
+            }
+        }
+    }
+}

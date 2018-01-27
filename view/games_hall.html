@@ -1,0 +1,33 @@
+{% include "./layout/header.html" %}
+<link rel="stylesheet" type="text/css" href="../static/css/games_hall.css">
+<div id="main" class="main">
+    <div class="wraper">
+        <ul class="panelUl twoColumn">
+            <li>
+                <div class="panelBox">
+                    {% set hasStart=true %}
+                    {% include "./templates/hall_eightSeat.html" %}
+                </div>
+            </li>
+            <li>
+                <div class="panelBox">
+                    {% set hasStart=false %}
+                    {% include "./templates/hall_eightSeat.html" %}
+                </div>
+            </li>
+            <li>
+                <div class="panelBox">
+                    {% set hasStart=false %}
+                    {% include "./templates/hall_fourSeat.html" %}
+                </div>
+            </li>
+            <li>
+                <div class="panelBox">
+                    {% set hasStart=false %}
+                    {% include "./templates/hall_twoSeat.html" %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% include "./layout/footer_nobar.html" %}

@@ -1,0 +1,122 @@
+*{padding:0;margin:0;font-family: "Microsoft Yahei", "Hiragino Sans GB", Arial, Lucida, Verdana, SimSun, Helvetica, sans-serif;} 
+html{color:#333;font-size:62.5%}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+fieldset,img{border:0}
+body{ -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust: none;}/*去除A标签点击时的高亮*/
+body{overflow:hidden;overflow-x:hidden;overflow-y: auto;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+a{text-decoration:none;}
+a, input:focus,select,li:focus,span:focus,i:focus,img:focus,button:focus{outline:0;}
+img{border:0;display: block;}
+i{font-style:normal}
+ol,ul{
+    list-style:none;//去除li前面的标号
+    font-size:0;letter-spacing:-3px;//去除li之间的默认间距
+    >li{
+        font-size:1.4rem;letter-spacing:0;
+    }
+}
+table{border-collapse:collapse;border-spacing:0}
+
+/*去掉火狐手机默认灰背景*/
+input[type=text],input[type=password]{
+    background:#fff;
+}
+/*去掉ios手机自带按钮样式*/
+input[type="button"], input[type="submit"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+textarea {  -webkit-appearance: none;}   
+
+.fix{*zoom:1;}.fix:after,.fix:before{display:block; content:"clear"; height:0; clear:both; overflow:hidden; visibility:hidden;}
+.clearfix:after{content:" ";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+
+/*通用库 common*/
+.fa{font-family:'Arial';}
+.fs{font-family:'宋体';}
+.fw{font-family:'微软雅黑';}
+
+.fl{float:left;}.fr{float:right;}.cl{clear:both;}
+.fn{font-weight:normal;font-style:normal;}.fb{font-weight:bold;}.fi{font-style:italic;}
+
+.tc{text-align:center;}.tr{text-align:right;}.tl{text-align:left;}
+.tj{
+    text-align:justify; text-justify:distribute-all-lines; text-align-last:justify; 
+}
+.mc{margin:0 auto;}
+.vm{vertical-align:middle;}.vtb{vertical-align:text-bottom;}.vt{vertical-align:top;}.vn{vertical-align:-2px;}.vimg{margin-bottom:-3px;}
+
+.rel{position:relative;}.abs{position:absolute;}
+
+.dn{display:none;}.db{display:block;}.dib{-moz-inline-stack:inline-block; display:inline-block;}.di{display:inline;}
+/*盒布局*/
+//.ub{display:-webkit-box !important;display:-moz-box !important;display:-ms-flexbox !important;display:box !important;position:relative;width:100%;}
+/*盒布局 兼容写法
+display:-webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+*/
+//.ub_f1{position:relative;-moz-box-flex:1;-webkit-box-flex: 1;box-flex: 1;flex:1}
+/*ie10通过私有属性 -ms-flex-align 支持*/
+
+/*圆角  behavior:url(ie-css3.htc);*/
+.radius(@radius:4px){
+    -moz-border-radius:@radius;
+    -webkit-border-radius:@radius;
+    border-radius:@radius;
+}
+/*省略号*/
+.ellipsis{overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;}
+/*多行文本垂直居中  压缩后hack单独*/
+.outer{display:table;overflow:hidden;*position:relative;}
+.outer .middle{display:table-cell;vertical-align:middle;*position:absolute;*top:50%;}
+.outer .middle .inner{*position:relative;*top:-50%}
+/*透明*/
+.opacity(@value:0.8){
+    @ie_value: (@value * 100);
+    -khtml-opacity: @value;
+    -moz-opacity: @value;
+    opacity: @value;
+    filter: ~'alpha(opacity=@{ie_value})';
+}
+/*阴影*/
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)){
+    -webkit-box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    box-shadow: @shadow;
+    filter: 
+    progid:DXImageTransform.Microsoft.Shadow(Color=#000000, Strength=2, Direction=90),
+    progid:DXImageTransform.Microsoft.Shadow(Color=#000000, Strength=2, Direction=180);
+}
+/*文字阴影 */
+.text_shadow(@x: 0, @y: 1px, @blur: 0px, @color:#fff){
+    -webkit-transform:translate(2px, 20px);
+    -moz-text-shadow:@arguments;
+    -webkit-text-shadow:@arguments;
+    text-shadow:@arguments;
+}
+/*旋转 */
+.rotate(@angle:7deg){
+    float:left;
+    -ms-transform:rotate(@angle); /* IE 9 */
+    -moz-transform:rotate(@angle); /* Firefox */
+    -webkit-transform:rotate(@angle); /* Safari and Chrome */
+    -o-transform:rotate(@angle); /* Opera */
+    transform:rotate(@angle);
+}
+/*y轴移动*/
+.translateY(@y:-6px){
+    transform:translateY(@y);
+    -ms-transform:translateY(@y);	/* IE 9 */
+    -moz-transform:translateY(@y);	/* Firefox */
+    -webkit-transform:translateY(@y); /* Safari 和 Chrome */
+    -o-transform:translateY(@y);	/* Opera */
+}
+.transition(@time:0.3s){
+    -webkit-transition: all @time ease;
+    -moz-transition: all @time ease;
+    -o-transition: all @time ease;
+    transition: all @time ease;
+}

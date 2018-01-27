@@ -1,0 +1,79 @@
+<% include ../layout/header %>
+<link rel="stylesheet" type="text/css" href="../static/css/form.css">
+		<div id="main" class="main">
+			<div class="tabs">
+				<div id="main" class="main p10">
+					<form id="suginForm">
+						 <!-- active -->
+						<div class="formBox mt10">
+							<div class="inpbox ">
+								<p class="inp_icon"><i class="icon icon-shoujiapp f24"></i></p>
+								<p class="inp_txt"><input name='mobile' type="text" class="textInp" placeholder="手机号" maxlength="11"/></p>
+							</div>
+						</div>
+						<div class="formBox mt10">
+							<div class="inpbox ">
+								<p class="inp_icon"><i class="icon icon-shoujiapp f24"></i></p>
+								<p class="inp_txt"><input name='name' type="text" class="textInp" placeholder="昵称" maxlength="11"/></p>
+							</div>
+						</div>
+						<div class="formBox mt10 ">
+							<div class="inpbox ">
+								<p class="inp_icon"><i class="icon icon-yanzhengma prt2 f24"></i></p>
+								<p class="inp_txt"><input name="vcode" type="number" class="textInp" placeholder="图形码" maxlength="3" /></p>
+							</div>
+							<div class="codebox ml10">
+								<p class="validCode"><img src='/home/user/imgcode' /></p>
+							</div>
+						</div>
+						 <!-- error -->
+						<!-- 
+						<div class="formBox mt10 ">
+							<div class="inpbox ">
+								<p class="inp_icon"><i class="icon icon-youjian f30"></i></p>
+								<p class="inp_txt">
+								<input type="text" class="textInp" placeholder="动态码" maxlength="4"/>
+								</p>
+							</div>
+							<div class="codebox ml10">
+								<p class="codetxt active">获取动态码</p>
+
+							</div>
+						</div> -->
+						<div class="formBox mt10">
+							<div class="inpbox ">
+								<p class="inp_icon"><i class="icon icon-mima prt1 f26"></i></p>
+								<p class="inp_txt"><input name="password" type="password" class="textInp" placeholder="密码" /></p>
+							</div>
+						</div>
+				        <!-- <div class="formBox mt10">
+							<div class="inpbox gradeDrop" data-num=''>
+								<p class="inp_icon"><i class="icon icon-gexingshengji prt1 f26"></i></p>
+								<p class="inp_txt"><span class="c_txt">年级</span></p>
+				                <p><i class="icon icon-arrow-r f20 c_bbb prt2"></i></p>
+							</div>
+						</div> -->
+						<div class="formBox validOutBox"></div>
+						<div class="formBox mt20">
+							<div class="btnbox">
+								<p class="inp_txt"><input type="button" class="signupBtn btn_lg btn_23a bd_none w" value="注册" /></p>
+							</div>
+						</div>
+						<div class="formBox mt10">
+							<div class="btnbox">
+								<p class="inp_txt tr"><a class="forgetBtn" href="javascript:void(null)">未收到验证码？</a></p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+        </div>
+</div>
+<script type="text/javascript" src="/static/js/form.js"></script>
+<script>
+    $(function(){
+        // core.init();
+    })
+</script>
+</body>
+</html>

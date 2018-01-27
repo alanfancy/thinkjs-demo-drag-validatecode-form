@@ -1,0 +1,77 @@
+@import "../../common/less/base";  //公共基础样式
+@import "admin_icon";
+@import "admin_common";
+//::-webkit-scrollbar{width:0px}///chrome隐藏滚动条
+.adminConBox {
+  flex: 1;
+  overflow: auto;
+}
+.admin_conUl{
+  >li{
+    display:none;
+    &.active{
+      display:block;
+    }
+
+    .admin_tableBox{
+      >table{
+        width:100%;
+        tr{
+          border:1px solid #ddd;
+          >th{
+            text-align:center;padding:5px 3px;width:40px;background:#ddd;
+            &:nth-child(1){
+              width:45px;
+            }
+            &:nth-child(2){
+              width:auto;
+            }
+            &:nth-child(3){
+              width:30px;
+            }
+            &:nth-child(4){
+              width:50px;
+            }
+          }
+          >td{
+            text-align:center;padding:5px 3px;width:40px;border:1px solid #ddd;
+            &:nth-child(1){
+              width:45px;
+            }
+            &:nth-child(2){
+              width:auto;
+            }
+            &:nth-child(3){
+              width:30px;
+            }
+            &:nth-child(4){
+              width:50px;
+            }
+            >p{
+              margin:5px 0;background:#ddd;
+              border-radius:3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;
+            }
+          }
+        }
+      }
+    }
+    .admin_tit{
+      padding:0 10px;display:flex;
+      >p{
+        height:30px;line-height:30px;
+      }
+      >select{
+        height:32px;line-height: 32px;margin-top:5px;border-radius:5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;
+      }
+      >.admin_serach{
+        flex:1;
+      }
+      .admin_add{
+        vertical-align: top;height:32px;line-height: 32px;margin-top:6px;cursor:pointer;
+        >i{
+          .admin_icon;.admin_icon01_01;vertical-align: top;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<script type="text/javascript" src="../static/common/js/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../static/common/plugin/slidevalidate/get_validate_img.js"></script>
+<input hidden url="{{imgurl}}" />
+<script>
+    $(function(){
+        var imgURL=$('input').attr('url');
+        console.log(imgURL);
+        $('body').getValidImg({
+            bgImg:imgURL
+        },function(data){
+            console.log(data);
+            $.post('/validateimg',data,function(res){
+                console.log(res);
+            })
+        });
+    });
+</script>

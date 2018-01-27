@@ -1,0 +1,35 @@
+{% if type==1 %}
+    {# 电影列表 #}
+    {% set panelCls={cls:"filmUl",column:"threeColumn"} %}
+{% elif type==2 %}
+    {# 游戏列表 #}
+    {% set panelCls={cls:"gameUl",column:"threeColumn"} %}
+{% else %}
+    {# 首页 列表 #}
+    {% set panelCls={cls:"",column:"autoColumn"} %}
+{% endif %}
+{% set defaultImg='../static/images/cache/list.jpg' %}
+<ul class="panelUl {{panelCls.cls}} {{panelCls.column}}">
+    {% for list in lists %}
+        {% if list.poster %}
+                {# 列表图片 #}
+                {% set imgUrl= list.poster %}
+        {% else %}
+                {# 无图片时显示 #}
+                {% set imgUrl= defaultImg %}
+        {% endif %}
+            <li>
+                <div class="panelBox" uid="{{list.id}}" type="{{ type }}">
+                    <div class="panelImg">
+                        <img title="{{list.title}}"  alt="{{list.title}}" src="{{imgUrl}}" />
+                        <p class="totalTime">02:45:30</p>
+                        <!--<p class="tips ">付费</p>-->
+                    </div>
+                    <p class="panelTit" title="{{list.name}}">{{list.name}}</p>
+                    {% if list.sort %}
+                    <p class="panelSort">{{list.sort}}</p>
+                    {% endif %}
+                </div>
+            </li>
+    {% endfor %}
+</ul>

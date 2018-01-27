@@ -1,0 +1,32 @@
+{% include "./admin/admin_header.html" %}
+<link rel="stylesheet" type="text/css" href="../static/login/css/login_login.css">
+
+<script type="text/javascript" src="../static/common/plugin/dialog/dialog.js"></script>
+<script type="text/javascript" src="../static/common/plugin/slidevalidate/slidevalidate.js"></script>
+<script type="text/javascript" src="../static/common/plugin/sms/sms.js"></script>
+<div id="main" class="main">
+    <div class="wraper">
+        <div class="admin_loginBox">
+            <form method="post" name="loginForm" action="/login" enctype="multipart/form-data">
+                <div class="admin_formBox">
+                    <div class="admin_inpBox">
+                        <input type="text" class="admin_inp" name="username" value="" placeholder="手机" maxlength="11" minlength="11" />
+                    </div>
+                </div>
+                <div class="admin_formBox">
+                    <div class="admin_inpBox">
+                        <input type="text" class="admin_inp" name="password" value="" placeholder="密码" minlength="6" maxlength="18" />
+                    </div>
+                </div>
+                <div class="admin_formBox">
+                    <p class="msgTips warn"></p>
+                </div>
+                <div class="admin_formBox">
+                    <input class="admin_btn sumbitBtn" type="button" value="提交" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../static/login/js/login_login.js"></script>
+{% include "./admin/admin_footer.html" %}
