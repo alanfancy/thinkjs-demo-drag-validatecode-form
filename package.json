@@ -9,6 +9,7 @@
     "lint-fix": "eslint --fix src/"
   },
   "dependencies": {
+    "socket.io": "^2.0.4",
     "think-cache": "^1.0.0",
     "think-cache-file": "^1.0.8",
     "think-logger3": "^1.0.0",

@@ -6,12 +6,18 @@ thinkjs-demo-登陆+拖动验证码+后台表单提交
 
 /src/config/config.js
 
-host: '192.168.0.78',
+host: '',//127.0.0.1
 
 npm install
 
+//npm install socket.io --save
+
 本地测试地址：
 
-http://192.168.0.78:8360/admin
+http://127.0.0.1:8360/admin
 
 用户登陆  拖动验证码 表单提交 数据增删改查
+
+测试账号：13412345678
+
+密码：123456
